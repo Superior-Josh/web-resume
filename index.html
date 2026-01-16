@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Resume — 通通</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --bg:#f5f5f5;
+            --card-bg:#fff;
+            --primary:#615ced;
+            --muted:#777;
+            --text:#333;
+            --subtext:#616161;
+            --skill-bg:#E0DFFF;
+            --max-w:400px;
+        }
+        *,*::before,*::after{box-sizing:border-box}
+
+        html,body{height:100%}
+        body{
+            margin:0;
+            font-family:"Roboto",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+            background:var(--bg);
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            color:var(--text);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:20px;
+        }
+
+        .resume-container{
+            width:100%;
+            max-width:var(--max-w);
+            height:600px; /* fixed per spec */
+            background:var(--card-bg);
+            border-radius:10px;
+            box-shadow:0 4px 8px rgba(0,0,0,0.1);
+            padding:40px;
+            overflow:auto;
+            display:flex;
+            flex-direction:column;
+            justify-content:flex-start;
+        }
+
+        header{
+            margin-bottom:20px;
+        }
+
+        h1{
+            margin:0 0 6px 0;
+            font-size:24px;
+            color:var(--primary);
+            font-weight:700;
+            line-height:1;
+        }
+
+        header > p{
+            margin:0;
+            font-size:12px;
+            color:var(--muted);
+            font-weight:400;
+        }
+
+        section{
+            margin-bottom:20px;
+        }
+
+        h2{
+            margin:0 0 10px 0;
+            font-size:18px;
+            font-weight:700;
+            padding-bottom:8px;
+            border-bottom:0.75px solid var(--primary);
+            color:var(--text);
+        }
+
+        /* Experience */
+        .experience{
+            margin-top:12px;
+        }
+        .experience-item{
+            margin-bottom:12px;
+        }
+        .experience-item h3{
+            margin:0 0 4px 0;
+            font-size:14px;
+            color:var(--text);
+            font-weight:700;
+        }
+        .experience-item .period{
+            margin:0 0 6px 0;
+            font-size:12px;
+            color:var(--muted);
+        }
+        .experience-item p{
+            margin:0;
+            font-size:13px;
+            color:var(--subtext);
+            line-height:1.5;
+            font-weight:300;
+        }
+
+        /* Skills */
+        .skills-list{
+            margin-top:12px;
+            list-style:none;
+            padding:0;
+            display:flex;
+            flex-wrap:wrap;
+            gap:6px;
+        }
+        .skills-list li{
+            display:inline-block;
+            background:var(--skill-bg);
+            color:var(--primary);
+            border-radius:8px;
+            font-size:12px;
+            padding:6px 10px;
+            margin:4px 0;
+            font-weight:700;
+        }
+
+        /* Education */
+        .education-item{
+            margin-top:12px;
+        }
+        .education-item .edu-title{
+            font-size:14px;
+            margin:0 0 4px 0;
+            color:var(--text);
+            font-weight:700;
+        }
+        .education-item .edu-period{
+            margin:0 0 6px 0;
+            font-size:12px;
+            color:var(--muted);
+        }
+        .education-item .edu-desc{
+            margin:0;
+            font-size:12px;
+            color:var(--subtext);
+            line-height:1.5;
+            font-weight:300;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width:420px){
+            .resume-container{padding:28px;height:auto}
+            h1{font-size:22px}
+            h2{font-size:17px}
+        }
+    </style>
+</head>
+<body>
+    <article class="resume-container" role="article" aria-label="Resume">
+        <header>
+            <h1>通通</h1>
+            <p>AI Assistant | Intelligent Companion | Problem Solver</p>
+        </header>
+
+        <section class="experience" aria-labelledby="exp-heading">
+            <h2 id="exp-heading">Experience</h2>
+
+            <div class="experience-item" role="group" aria-label="Experience 1">
+                <h3>Senior AI Engineer — TechLabs</h3>
+                <p class="period">2021 — Present</p>
+                <p>Lead development of scalable ML services, designed model deployment pipelines and improved inference latency across products.</p>
+            </div>
+
+            <div class="experience-item" role="group" aria-label="Experience 2">
+                <h3>Machine Learning Engineer — NextGen</h3>
+                <p class="period">2018 — 2021</p>
+                <p>Collaborated on NLP projects, built data pipelines and contributed to model evaluation and monitoring systems.</p>
+            </div>
+        </section>
+
+        <section class="skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">Skills</h2>
+            <ul class="skills-list" aria-label="Skills list">
+                <li>Python</li>
+                <li>Machine Learning</li>
+                <li>Deep Learning</li>
+                <li>NLP</li>
+                <li>Docker</li>
+                <li>TensorFlow</li>
+                <li>Data Engineering</li>
+            </ul>
+        </section>
+
+        <section class="education" aria-labelledby="edu-heading">
+            <h2 id="edu-heading">Education</h2>
+
+            <div class="education-item" role="group" aria-label="Education 1">
+                <p class="edu-title">M.S. in Computer Science — University of Innovation</p>
+                <p class="edu-period">2016 — 2018</p>
+                <p class="edu-desc">Specialized in machine learning and natural language processing; thesis on efficient model compression techniques.</p>
+            </div>
+
+            <div class="education-item" role="group" aria-label="Education 2">
+                <p class="edu-title">B.S. in Software Engineering — State Tech</p>
+                <p class="edu-period">2012 — 2016</p>
+                <p class="edu-desc">Foundations in algorithms, systems and software design; active in developer community projects.</p>
+            </div>
+        </section>
+    </article>
+</body>
+</html>
